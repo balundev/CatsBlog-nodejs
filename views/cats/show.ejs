@@ -1,0 +1,50 @@
+<% include ../partials/header %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <p class="lead">Cats</p>
+            <div class="list-group">
+                <li class="list-group-item active">Info 1</li>
+                <li class="list-group-item">Info 2</li>
+                <li class="list-group-item">Info 3</li>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="img-thumbnail">
+                <image class="img-fluid" src="<%= cat.image %>"></image>
+                <div class="caption-full">
+                    <div class="container">
+                        <h5 class="float-right">1500PLN</h5>
+                        <h2><a href="/"><%= cat.name %></a></h2>
+                        <p class="cat-description"><%= cat.description %></p>
+                    </div>
+                </div>
+            </div>
+            <div class="card bg-light">
+                <h5 class="card-header">Comments</h5>
+                <div class="text-right">
+                    <a class="btn btn-success" href="/cats/<%= cat.id %>/comment/new">Add comment</a>
+                </div>
+                <% cat.comments.map((comment)=>{ %>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card-body">
+                                <hr class="my-1">
+                                <h6 class="card-title">
+                                    <strong><%= comment.author %></strong>
+                                    <span class="float-right">10 Days ago</span>
+                                </h6>
+                                <p class="card-text">
+                                    <%= comment.text %>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<% include ../partials/footer %>

@@ -1,0 +1,15 @@
+.container .card {
+    margin-top: 50px;
+}
+.cat-description {
+    padding: 10px;
+}
+.caption-full h5 {
+    padding-top: 10px;
+}
+.card .btn-success{
+    margin:5px 5px 0 0;
+}
+.card .card-text {
+    margin: 2px 0 2px 0;
+}

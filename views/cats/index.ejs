@@ -1,4 +1,4 @@
-<% include partials/header%>
+<% include ../partials/header%>
     <div class="container">
         <header class="jumbotron">
             <div class="container">
@@ -8,17 +8,20 @@
             </div>
         </header>
 
-        <div class="row">
+        <div class="row text-center">
             <% cats.map((el)=>{ %>
             <div class="col-md-6 col-sm-12 mb-4">
                 <div class="img-thumbnail">
-                    <image src="<%=el["image"]%>" width="100%" height="300px"></image>
-                    <div class="caption text-center">
-                        <h4><%=el["name"]%></h4>
+                    <image src="<%=el.image %>" width="100%" height="300px"></image>
+                    <div class="caption">
+                        <h4><strong><%=el.name %></strong></h4>
                     </div>
+                    <p>
+                        <a href="/cats/<%=el.id %>" class="btn btn-outline-info btn-lg btn-block">More Info</a>
+                    </p>
                 </div>
             </div>
             <%})%>
         </div>
     </div>
-<% include partials/footer%>
+<% include ../partials/footer%>
