@@ -23,7 +23,7 @@
             <div class="card bg-light">
                 <h5 class="card-header">Comments</h5>
                 <div class="text-right">
-                    <a class="btn btn-success" href="/cats/<%= cat.id %>/comment/new">Add comment</a>
+                    <a class="btn btn-success" href="/cats/<%= cat.id %>/comments/new">Add comment</a>
                 </div>
                 <% cat.comments.map((comment)=>{ %>
                     <div class="row">
@@ -31,7 +31,7 @@
                             <div class="card-body">
                                 <hr class="my-1">
                                 <h6 class="card-title">
-                                    <strong><%= comment.author %></strong>
+                                    <strong><%= comment.author.username %></strong>
                                     <span class="float-right">10 Days ago</span>
                                 </h6>
                                 <p class="card-text">

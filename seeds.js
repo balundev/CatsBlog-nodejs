@@ -37,19 +37,6 @@ let seedDB = ()=>{
                     console.log(err)
                 }else{
                     console.log("added cats");
-                    Comment.create({
-                        text: "best cats ever",
-                        author: "alan"
-                    },(err, comment)=>{
-                        if(err){
-                            console.log(err);
-                        } else {
-                            console.log("saved comment");
-                            cats.comments.push(comment);
-                            cats.save();
-                            console.log("created comment")
-                        }
-                    });
                 }
             })
         })
