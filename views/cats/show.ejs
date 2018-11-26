@@ -14,9 +14,18 @@
                 <image class="img-fluid" src="<%= cat.image %>"></image>
                 <div class="caption-full">
                     <div class="container">
-                        <h5 class="float-right">1500PLN</h5>
-                        <h2><a href="/"><%= cat.name %></a></h2>
+                        <h5 class="float-right">Cat price: 1500PLN</h5>
+                        <h2><%= cat.name %></h2>
                         <p class="cat-description"><%= cat.description %></p>
+                        <p>
+                            <em>Submitted by <strong><%= cat.author.username %></strong></em>
+                        </p>
+                        <% if(currentUser && cat.author.id.equals(currentUser.id)){ %>
+                        <a class="btn btn-warning btn-sm" href="/cats/<%= cat.id%>/edit">Edit</a>
+                        <form class="d-inline-flex" action="/cats/<%= cat.id%>?_method=delete" method="post">
+                            <button class="btn btn-danger btn-sm">Delete</button>
+                        </form>
+                        <%}%>
                     </div>
                 </div>
             </div>
@@ -37,6 +46,12 @@
                                 <p class="card-text">
                                     <%= comment.text %>
                                 </p>
+                                <% if(currentUser && comment.author.id.equals(currentUser.id)){ %>
+                                    <a href="/cats/<%=cat.id%>/comments/<%=comment.id%>/edit" class="btn btn-sm float-right text-secondary ">edit</a>
+                                <form action="/cats/<%=cat.id%>/comments/<%=comment.id%>/delete?_method=delete" method="post">
+                                     <button class="btn btn-sm float-right text-danger bg-white">delete</button>
+                                </form>
+                                <%}%>
                             </div>
                         </div>
                     </div>

@@ -12,12 +12,12 @@
             <% cats.map((el)=>{ %>
             <div class="col-md-6 col-sm-12 mb-4">
                 <div class="img-thumbnail">
-                    <image src="<%=el.image %>" width="100%" height="300px"></image>
                     <div class="caption">
                         <h4><strong><%=el.name %></strong></h4>
                     </div>
-                    <p>
-                        <a href="/cats/<%=el.id %>" class="btn btn-outline-info btn-lg btn-block">More Info</a>
+                    <image src="<%=el.image %>" width="100%" height="300px"></image>
+                    <p class="mt-2 mb-2">
+                        <a href="/cats/<%=el.id %>" class="btn btn-outline-info btn-md">Read about</a>
                     </p>
                 </div>
             </div>
