@@ -1,7 +1,7 @@
 # bestCats
 nodeJS &amp; express &amp; bootstrap &amp; mongoDB app
 
-App where you can post info about cat breed, info about cat, and link image. Before add a cat you have to register, only registered users can add cats, and comments. Post and comment owner can delete and edit his post/comment. 
+App where you can post info about cat breed, info about cat, and link image. Before that you have to register because only registered users can add cats, and comments. Post and comment owner can delete and edit his post/comment. 
 
 1.To run app you have to use node
 
